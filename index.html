@@ -2,24 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vibe Coding — Course Dashboard</title>
-  <meta name="description" content="Vibe Coding Course Dashboard — Framework → Expansion → Resources" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Vibe Coding course dashboard: Framework → Expansion → Resources. Powered by Self-Defi." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
-  <!-- Top Bar -->
-  <header class="topbar">
-    <div class="topbar__inner">
-      <div class="brand">
-        <img class="brand__logo" src="self-defi-logo.PNG" alt="Self-Defi logo" />
+  <!-- HEADER -->
+  <header class="topbar" role="banner">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#framework" aria-label="Vibe Coding home">
+        <img class="brand__logo" src="./assets/self-defi-logo.png" alt="Self-Defi logo" />
         <div class="brand__text">
           <div class="brand__title">VIBE CODING</div>
-          <div class="brand__subtitle">Where Thought Becomes Infrastructure</div>
-          <div class="brand__subsubtitle">Built using the framework it teaches</div>
+          <div class="brand__sub">Where Thought Becomes Infrastructure</div>
+          <div class="brand__sub2">Built using the framework it teaches</div>
         </div>
-      </div>
+      </a>
 
       <nav class="nav" aria-label="Primary">
         <a class="nav__link" href="#framework" data-section="framework">Framework</a>
@@ -29,56 +33,60 @@
     </div>
   </header>
 
-  <main class="page">
-    <!-- Hero -->
+  <!-- MAIN -->
+  <main class="wrap" role="main">
+    <!-- HERO / DASHBOARD -->
     <section class="hero" aria-label="Course Dashboard">
-      <div class="card card--hero">
+      <div class="hero__card">
         <h1 class="hero__title">Course Dashboard</h1>
         <p class="hero__desc">
           This dashboard is the operational hub. The PDFs are the canonical source of truth.
           Live builds are proof and reference — not the foundation.
         </p>
 
-        <div class="hero__cta">
+        <div class="hero__actions" role="group" aria-label="Primary actions">
           <a class="btn btn--primary" href="#framework">Start with Framework</a>
           <a class="btn" href="#expansion">Go to Expansion</a>
           <a class="btn" href="#resources">Open Resources</a>
         </div>
 
-        <div class="note">
+        <div class="hero__note" role="note">
           If your links 404: confirm your repo paths (see link paths in each card).
         </div>
       </div>
     </section>
 
-    <!-- Framework -->
-    <section id="framework" class="section" data-observe="framework" aria-label="Framework">
-      <div class="section__header">
+    <!-- FRAMEWORK -->
+    <section id="framework" class="section" data-spy="framework" aria-label="Framework">
+      <header class="section__head">
         <h2 class="section__title">Framework</h2>
         <p class="section__lead">
           The framework layer defines the model, the rules, and the intent. This is the “what” and “why” in strict form.
         </p>
-      </div>
+      </header>
 
-      <div class="stack">
+      <div class="grid">
         <article class="card">
-          <div class="card__top">
+          <div class="card__head">
             <h3 class="card__title">Canonical Framework PDF</h3>
             <span class="pill">Framework</span>
           </div>
-          <p class="card__desc">
+
+          <p class="card__text">
             Use this as the authoritative baseline. It defines the structure the rest of the course expands.
           </p>
+
           <div class="card__actions">
-            <!-- Update filename if yours differs -->
-            <a class="btn btn--primary" href="vibe-coding-pdf.pdf" target="_blank" rel="noopener">Open PDF</a>
+            <!-- update these paths to match your repo -->
+            <a class="btn btn--primary" href="./vibe-coding-pdf.pdf" target="_blank" rel="noopener">Open PDF</a>
             <a class="btn" href="#expansion">Jump to Expansion</a>
           </div>
-          <div class="path">Path: <code>vibe-coding-pdf.pdf</code></div>
+
+          <div class="card__path">Path: <code>vibe-coding-pdf.pdf</code></div>
         </article>
 
         <article class="card">
-          <div class="card__top">
+          <div class="card__head">
             <h3 class="card__title">How to Use This Dashboard</h3>
             <span class="pill">Instructions</span>
           </div>
@@ -97,128 +105,142 @@
       </div>
     </section>
 
-    <!-- Expansion -->
-    <section id="expansion" class="section" data-observe="expansion" aria-label="Expansion">
-      <div class="section__header">
+    <!-- EXPANSION -->
+    <section id="expansion" class="section" data-spy="expansion" aria-label="Expansion">
+      <header class="section__head">
         <h2 class="section__title">Expansion</h2>
         <p class="section__lead">
           The expansion layer is where the material “hits home.” These PDFs explain the framework in implementation-grade detail.
         </p>
-      </div>
+      </header>
 
       <div class="stack">
-        <article class="card">
-          <div class="card__top">
-            <h3 class="card__title">Section I — The Problem Space</h3>
-            <span class="pill">Expansion</span>
+        <article class="card card--row">
+          <div class="card__content">
+            <div class="card__head">
+              <h3 class="card__title">Section I — The Problem Space</h3>
+              <span class="pill">Expansion</span>
+            </div>
+            <p class="card__text">
+              Why ideas die before they become real. The real bottleneck is origination under uncertainty.
+            </p>
+            <div class="card__actions">
+              <a class="btn btn--primary" href="./section-one.pdf" target="_blank" rel="noopener">Open PDF</a>
+            </div>
+            <div class="card__path">Path: <code>section-one.pdf</code></div>
           </div>
-          <p class="card__desc">
-            Why ideas die before they become real. The real bottleneck is origination under uncertainty.
-          </p>
-          <div class="card__actions">
-            <a class="btn btn--primary" href="section-one.pdf" target="_blank" rel="noopener">Open PDF</a>
-          </div>
-          <div class="path">Path: <code>section-one.pdf</code></div>
         </article>
 
-        <article class="card">
-          <div class="card__top">
-            <h3 class="card__title">Section II — Core Theory</h3>
-            <span class="pill">Expansion</span>
+        <article class="card card--row">
+          <div class="card__content">
+            <div class="card__head">
+              <h3 class="card__title">Section II — Core Theory</h3>
+              <span class="pill">Expansion</span>
+            </div>
+            <p class="card__text">
+              The method behind the method. Thought → language → structure → artifact.
+            </p>
+            <div class="card__actions">
+              <a class="btn btn--primary" href="./section-two.pdf" target="_blank" rel="noopener">Open PDF</a>
+            </div>
+            <div class="card__path">Path: <code>section-two.pdf</code></div>
           </div>
-          <p class="card__desc">
-            The method behind the method. Thought → language → structure → artifact.
-          </p>
-          <div class="card__actions">
-            <a class="btn btn--primary" href="section-two.pdf" target="_blank" rel="noopener">Open PDF</a>
-          </div>
-          <div class="path">Path: <code>section-two.pdf</code></div>
         </article>
 
-        <article class="card">
-          <div class="card__top">
-            <h3 class="card__title">Section III — Tooling as Cognitive Extensions</h3>
-            <span class="pill">Expansion</span>
+        <article class="card card--row">
+          <div class="card__content">
+            <div class="card__head">
+              <h3 class="card__title">Section III — Tooling as Cognitive Extensions</h3>
+              <span class="pill">Expansion</span>
+            </div>
+            <p class="card__text">
+              ChatGPT, NotebookLM, VS Code, GitHub — selected by cognitive function, not popularity.
+            </p>
+            <div class="card__actions">
+              <a class="btn btn--primary" href="./section-three.pdf" target="_blank" rel="noopener">Open PDF</a>
+            </div>
+            <div class="card__path">Path: <code>section-three.pdf</code></div>
           </div>
-          <p class="card__desc">
-            ChatGPT, NotebookLM, VS Code, GitHub — selected by cognitive function, not popularity.
-          </p>
-          <div class="card__actions">
-            <a class="btn btn--primary" href="section-three.pdf" target="_blank" rel="noopener">Open PDF</a>
-          </div>
-          <div class="path">Path: <code>section-three.pdf</code></div>
         </article>
 
-        <article class="card">
-          <div class="card__top">
-            <h3 class="card__title">Section IV — Building Systems That Ship Reality</h3>
-            <span class="pill">Expansion</span>
+        <article class="card card--row">
+          <div class="card__content">
+            <div class="card__head">
+              <h3 class="card__title">Section IV — Building Systems That Ship Reality</h3>
+              <span class="pill">Expansion</span>
+            </div>
+            <p class="card__text">
+              Why ideas collapse without systems. How the dashboard + PDFs become the system interface.
+            </p>
+            <div class="card__actions">
+              <a class="btn btn--primary" href="./section-four.pdf" target="_blank" rel="noopener">Open PDF</a>
+            </div>
+            <div class="card__path">Path: <code>section-four.pdf</code></div>
           </div>
-          <p class="card__desc">
-            Why ideas collapse without systems. How the dashboard + PDFs become the system interface.
-          </p>
-          <div class="card__actions">
-            <a class="btn btn--primary" href="section-four.pdf" target="_blank" rel="noopener">Open PDF</a>
-          </div>
-          <div class="path">Path: <code>section-four.pdf</code></div>
         </article>
 
-        <article class="card">
-          <div class="card__top">
-            <h3 class="card__title">Section V — Apply Vibe Coding to Any Sector</h3>
-            <span class="pill">Expansion</span>
+        <article class="card card--row">
+          <div class="card__content">
+            <div class="card__head">
+              <h3 class="card__title">Section V — Apply Vibe Coding to Any Sector</h3>
+              <span class="pill">Expansion</span>
+            </div>
+            <p class="card__text">
+              Execution infrastructure — applicable across niches because it targets the universal layer.
+            </p>
+            <div class="card__actions">
+              <a class="btn btn--primary" href="./section-five.pdf" target="_blank" rel="noopener">Open PDF</a>
+            </div>
+            <div class="card__path">Path: <code>section-five.pdf</code></div>
           </div>
-          <p class="card__desc">
-            Execution infrastructure — applicable across niches because it targets the universal layer.
-          </p>
-          <div class="card__actions">
-            <a class="btn btn--primary" href="section-five.pdf" target="_blank" rel="noopener">Open PDF</a>
-          </div>
-          <div class="path">Path: <code>section-five.pdf</code></div>
         </article>
 
-        <article class="card">
-          <div class="card__top">
-            <h3 class="card__title">Section VI — Execution & Iteration</h3>
-            <span class="pill">Expansion</span>
+        <article class="card card--row">
+          <div class="card__content">
+            <div class="card__head">
+              <h3 class="card__title">Section VI — Build Loop, QA, and Responsible Execution</h3>
+              <span class="pill">Expansion</span>
+            </div>
+            <p class="card__text">
+              How to verify outputs, avoid hallucinated confidence, and ship stable systems.
+            </p>
+            <div class="card__actions">
+              <a class="btn btn--primary" href="./section-six.pdf" target="_blank" rel="noopener">Open PDF</a>
+            </div>
+            <div class="card__path">Path: <code>section-six.pdf</code></div>
           </div>
-          <p class="card__desc">
-            How to move from first working artifact to stable system without losing momentum.
-          </p>
-          <div class="card__actions">
-            <a class="btn btn--primary" href="section-six.pdf" target="_blank" rel="noopener">Open PDF</a>
-          </div>
-          <div class="path">Path: <code>section-six.pdf</code></div>
         </article>
 
-        <article class="card">
-          <div class="card__top">
-            <h3 class="card__title">Section VII — Long-Term Value & Compounding Judgment</h3>
-            <span class="pill">Expansion</span>
+        <article class="card card--row">
+          <div class="card__content">
+            <div class="card__head">
+              <h3 class="card__title">Section VII — Publish, Deploy, and Iterate</h3>
+              <span class="pill">Expansion</span>
+            </div>
+            <p class="card__text">
+              How GitHub becomes accountability, how Pages becomes delivery, and iteration becomes compounding value.
+            </p>
+            <div class="card__actions">
+              <a class="btn btn--primary" href="./section-seven.pdf" target="_blank" rel="noopener">Open PDF</a>
+            </div>
+            <div class="card__path">Path: <code>section-seven.pdf</code></div>
           </div>
-          <p class="card__desc">
-            The method compounds. This is where builder identity shifts from learning to shipping.
-          </p>
-          <div class="card__actions">
-            <a class="btn btn--primary" href="section-seven.pdf" target="_blank" rel="noopener">Open PDF</a>
-          </div>
-          <div class="path">Path: <code>section-seven.pdf</code></div>
         </article>
       </div>
     </section>
 
-    <!-- Resources -->
-    <section id="resources" class="section" data-observe="resources" aria-label="Resources">
-      <div class="section__header">
+    <!-- RESOURCES -->
+    <section id="resources" class="section" data-spy="resources" aria-label="Resources">
+      <header class="section__head">
         <h2 class="section__title">Resources</h2>
         <p class="section__lead">
           Execution support. Tool links, templates, and a repeatable build checklist. This is what turns reading into shipping.
         </p>
-      </div>
+      </header>
 
-      <div class="stack">
+      <div class="grid">
         <article class="card">
-          <div class="card__top">
+          <div class="card__head">
             <h3 class="card__title">Tool Stack</h3>
             <span class="pill">Resources</span>
           </div>
@@ -230,16 +252,16 @@
             <li>GitHub (persistence + accountability)</li>
           </ul>
 
-          <div class="chiprow">
-            <a class="chip" href="https://chat.openai.com/" target="_blank" rel="noopener">ChatGPT</a>
-            <a class="chip" href="https://notebooklm.google/" target="_blank" rel="noopener">NotebookLM</a>
-            <a class="chip" href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a>
-            <a class="chip" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+          <div class="chiprow" role="group" aria-label="Tool links">
+            <a class="chip" href="https://chat.openai.com" target="_blank" rel="noopener">ChatGPT</a>
+            <a class="chip" href="https://notebooklm.google.com" target="_blank" rel="noopener">NotebookLM</a>
+            <a class="chip" href="https://code.visualstudio.com" target="_blank" rel="noopener">VS Code</a>
+            <a class="chip" href="https://github.com" target="_blank" rel="noopener">GitHub</a>
           </div>
         </article>
 
         <article class="card">
-          <div class="card__top">
+          <div class="card__head">
             <h3 class="card__title">Build Checklist</h3>
             <span class="pill">Resources</span>
           </div>
@@ -260,23 +282,27 @@
         </article>
 
         <article class="card">
-          <div class="card__top">
+          <div class="card__head">
             <h3 class="card__title">Live Build References</h3>
             <span class="pill">Resources</span>
           </div>
-          <p class="card__desc">
-            This area is intentionally “light.” Live builds exist as legitimacy and proof-of-execution — the PDFs + dashboard are the foundation.
+
+          <p class="card__text">
+            This area is intentionally “light.” Live builds exist as legitimacy and proof-of-execution —
+            the PDFs + dashboard are the foundation.
           </p>
+
           <div class="card__actions">
-            <button class="btn btn--ghost" type="button" disabled>Add video links here</button>
+            <button class="btn btn--ghost" type="button" id="addLinksBtn">Add video links here</button>
           </div>
         </article>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer__inner">
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="wrap footer__inner">
       <div class="footer__left">Powered by Self Defi | Digital Infrastructure Architect</div>
       <div class="footer__right">
         <a href="#framework">Framework</a>
@@ -288,6 +314,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
