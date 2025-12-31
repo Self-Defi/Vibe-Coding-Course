@@ -1,5 +1,6 @@
-// "You Are Here" cue (Option A): highlight active nav item based on section in view.
-// Uses IntersectionObserver for smooth tracking.
+// "You Are Here" cue (Option A):
+// Highlights the active nav item based on scroll position.
+// Uses IntersectionObserver for smooth + efficient section tracking.
 
 (function () {
   const navLinks = Array.from(document.querySelectorAll(".nav__link"));
@@ -11,15 +12,16 @@
     navLinks.forEach((a) => {
       const isMatch = a.dataset.section === sectionName;
       a.classList.toggle("is-active", isMatch);
-      a.setAttribute("aria-current", isMatch ? "page" : "false");
+      if (isMatch) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
     });
   }
 
-  // Default active on load based on hash or first section
+  // Default active on load
   const initial = (location.hash || "#framework").replace("#", "");
   setActive(initial);
 
-  // Click: immediate feedback
+  // Click feedback (instant highlight)
   navLinks.forEach((a) => {
     a.addEventListener("click", () => {
       const target = a.dataset.section;
@@ -27,9 +29,9 @@
     });
   });
 
-  // Scroll: update active state based on what is on screen
   const observer = new IntersectionObserver(
     (entries) => {
+      // pick the most visible intersecting section
       const visible = entries
         .filter((e) => e.isIntersecting)
         .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
@@ -41,7 +43,8 @@
     },
     {
       root: null,
-      rootMargin: "-40% 0px -55% 0px",
+      // tuned for sticky header + page layout
+      rootMargin: "-35% 0px -55% 0px",
       threshold: [0.15, 0.25, 0.35, 0.5, 0.65],
     }
   );
